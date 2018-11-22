@@ -11,9 +11,16 @@ var replacePath = require('./replace-path.js');
  */
 function gulpPathAlias(baseUrl, paths) {
   return through.obj(function (file, enc, cb) {
-    var code = fs.readFileSync(file.path, "utf8");
-    code = replacePath(code, file.history.toString(), baseUrl, paths);
-    file.contents = Buffer.from(code, 'utf-8');
+    if (file.isBuffer()) {
+      var code = file.contents.toString("utf-8");
+      code = replacePath(code, file.history.toString(), baseUrl, paths);
+      file.contents = Buffer.from(code, 'utf-8');
+    } else if (file.isStream()) {
+      var code = fs.readFileSync(file.path, "utf8");
+      code = replacePath(code, file.history.toString(), baseUrl, paths);
+      file.contents = Buffer.from(code, 'utf-8');
+    }
+
     cb(null, file);
   });
 };
