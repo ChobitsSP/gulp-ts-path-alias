@@ -9,6 +9,10 @@
   "scripts": {
     "test": "gulp"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ChobitsSP/gulp-ts-path-alias.git"
+  },
   "keywords": [
     "gulpplugin"
   ],
