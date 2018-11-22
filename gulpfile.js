@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const alias = require('./src/index.js');
+const alias = require('./index.js');
 gulp.task('default', ['test']);
 
 gulp.task('test', () => {

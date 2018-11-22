@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "node ./test/index.js"
-  },
-  "author": "Chobits",
-  "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "keywords": [
+    "gulpplugin"
+  ],
+  "author": "Chobits",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChobitsSP/gulp-ts-path-alias/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
   }
 }
