@@ -13,11 +13,11 @@ function gulpPathAlias(baseUrl, paths) {
   return through.obj(function (file, enc, cb) {
     if (file.isBuffer()) {
       var code = file.contents.toString("utf-8");
-      code = replacePath(code, file.history.toString(), baseUrl, paths);
+      code = replacePath(code, file.path, baseUrl, paths);
       file.contents = Buffer.from(code, 'utf-8');
     } else if (file.isStream()) {
       var code = fs.readFileSync(file.path, "utf8");
-      code = replacePath(code, file.history.toString(), baseUrl, paths);
+      code = replacePath(code, file.path, baseUrl, paths);
       file.contents = Buffer.from(code, 'utf-8');
     }
 
