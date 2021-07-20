@@ -14,7 +14,7 @@ Then, add it to your `gulpfile.js`:
 var alias = require('gulp-ts-path-alias');
 
 gulp.task('test', function(){
-  gulp.src(['./src/**/*.js'])
+  return gulp.src(['./src/**/*.js'])
     .pipe(alias('.', {
       "@/*": ["app/*"]
     }))
